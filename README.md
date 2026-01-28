@@ -1,6 +1,6 @@
 # JobNova - AI-Powered Job Board & Interview Coach
 
-![JobNova AI Interview Assistant](frontend/public/images/hero.png)
+# ![JobNova AI Interview Assistant](frontend/public/images/hero.png)
 
 ## 🚀 Overview
 
@@ -182,4 +182,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ---
 
-Built with ❤️ by [Your Name/Team]
+Architect and Developed by Srujankatukam❤️
