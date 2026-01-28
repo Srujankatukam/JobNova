@@ -1,0 +1,252 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  
+  /* Custom colors for Figma design */
+  --color-purple-50: #faf5ff;
+  --color-purple-100: #f3e8ff;
+  --color-purple-500: #a855f7;
+  --color-purple-600: #9333ea;
+  --color-purple-700: #7e22ce;
+  --color-lime-400: #a3e635;
+  --color-lime-500: #84cc16;
+  --color-lime-600: #65a30d;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+/* Utility classes */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+/* Mobile safe area support */
+@supports (padding: max(0px)) {
+  .safe-area-inset-bottom {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+  
+  .safe-area-inset-top {
+    padding-top: max(1rem, env(safe-area-inset-top));
+  }
+}
+
+/* Mobile touch improvements */
+@media (max-width: 768px) {
+  button, a {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Ensure minimum touch target size */
+  button, a[role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Prevent horizontal overflow */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  position: relative;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Ensure containers don't overflow */
+.container, main, section {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Fix for flex containers */
+.flex {
+  min-width: 0;
+}
+
+/* Prevent flex items from overflowing */
+.flex > * {
+  min-width: 0;
+}
+
+/* Ensure images don't overflow */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Fix for SVG elements */
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive text sizing */
+@media (max-width: 375px) {
+  /* Extra small devices (iPhone SE, small Android) */
+  body {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 376px) and (max-width: 640px) {
+  /* Small devices (iPhone 12/13/14/15, standard Android) */
+  body {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 767px) {
+  /* Large phones (iPhone Pro Max, large Android) */
+  body {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Tablets (iPad, Android tablets) */
+  body {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Desktop and larger */
+  body {
+    font-size: 16px;
+  }
+}
+
+/* Tablet-specific adjustments */
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Adjust content margins for tablets */
+  main {
+    margin-left: 0 !important;
+  }
+  
+  /* Ensure proper spacing on tablets */
+  .tablet-full-width {
+    width: 100%;
+    margin-right: 0 !important;
+  }
+  
+  /* Hide right sidebar on tablets and remove margin */
+  aside[class*="lg:block"] {
+    display: none !important;
+  }
+  
+  /* Remove right margin on tablets */
+  div[class*="lg:mr-80"],
+  div[class*="xl:mr-96"] {
+    margin-right: 0 !important;
+  }
+}
+
+/* Desktop-specific adjustments */
+@media (min-width: 1024px) {
+  /* Ensure proper spacing on desktop */
+  main {
+    transition: margin-left 0.3s ease;
+  }
+  
+  /* Ensure right sidebar has proper width */
+  aside[class*="w-80"] {
+    width: 320px !important;
+  }
+}
+
+@media (min-width: 1280px) {
+  aside[class*="xl:w-96"] {
+    width: 384px !important;
+  }
+}
+
+/* Large desktop adjustments */
+@media (min-width: 1280px) {
+  /* Optimize for large screens */
+  .max-w-4xl {
+    max-width: 56rem;
+  }
+}
+
+/* Extra large desktop */
+@media (min-width: 1536px) {
+  /* Ultra-wide screens */
+  .max-w-4xl {
+    max-width: 64rem;
+  }
+}
+
+/* Mobile filter buttons visibility */
+@media (max-width: 640px) {
+  /* Ensure filter buttons are visible on mobile */
+  button[class*="bg-purple-400"],
+  button[class*="bg-white"][class*="border-gray-200"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Prevent buttons from being cut off */
+  div[class*="flex flex-wrap"][class*="gap-2"] {
+    overflow: visible !important;
+    position: relative !important;
+    z-index: 10 !important;
+  }
+}
+
+/* Eclipse decorative effect - Responsive blur */
+.eclipse-effect {
+  filter: blur(60px);
+}
+
+@media (min-width: 1024px) {
+  .eclipse-effect {
+    filter: blur(80px);
+  }
+}
+
+@media (min-width: 1280px) {
+  .eclipse-effect {
+    filter: blur(100px);
+  }
+}
+
+/* Mobile Eclipse effect */
+.eclipse-effect-mobile {
+  filter: blur(50px);
+}
+
+@media (min-width: 375px) {
+  .eclipse-effect-mobile {
+    filter: blur(60px);
+  }
+}
