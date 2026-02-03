@@ -14,7 +14,7 @@ The centerpiece of JobNova is its **Real-Time Digital Human** integration. Using
 *   **Lifelike Avatar**: Interact with a hyper-realistic digital human that mimics human expressions and lip-syncing.
 *   **Real-Time Conversation**: Talk to the avatar naturally with near-zero latency (<500ms).
 *   **Hybrid Input**: Communicate via **Voice** (speech-to-speech) or **Text** (keyboard-to-speech).
-*   **Intelligent Responses**: The avatar understands context and provides relevant, professional feedback.
+*   **Intelligent Responses**: The avatar understands context and provides relevant, professional feedback. 
 *   **Visual Feedback**: Real-time indicators for connection quality and latency ensure a smooth experience.
 
 ### 💼 Smart Job Board
